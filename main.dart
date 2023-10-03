@@ -19,27 +19,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       primarySwatch: Colors.teal
       ),
-      home: homepage(),
-    );
-  }
-}
-class homepage extends StatefulWidget {
-  const homepage({super.key});
-
-  @override
-  State<homepage> createState() => _homepageState();
-}
-
-class _homepageState extends State<homepage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
       home: HomePage(),
     );
   }
 }
+
 
 

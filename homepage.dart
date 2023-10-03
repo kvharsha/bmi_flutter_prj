@@ -1,8 +1,10 @@
+import 'package:bmi_flutter_prj/homepage2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -45,7 +47,6 @@ class HomePage extends StatefulWidget {
          color1 = Colors.red;
        }
      });
-
    }
 
   @override
@@ -153,7 +154,11 @@ class HomePage extends StatefulWidget {
                 ),
                 SizedBox(height: 40,),
                 ElevatedButton(
-                  onPressed: () => {_computebmi()},
+                  onPressed:() {
+                    _computebmi();
+
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage2(bmi: bmi)));
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(
                       left: 12.0, right: 12.0, top: 8.0, bottom: 8.0),
@@ -167,16 +172,8 @@ class HomePage extends StatefulWidget {
                     ),
                   ),
                 )
+
                 ),
-                bmi != null
-                    ? Text(
-                        "BMI is ${bmi!.toStringAsFixed(2)}",
-                        style: GoogleFonts.poppins(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                        )
-                    :Container(),
               ],
             ),
             ),
